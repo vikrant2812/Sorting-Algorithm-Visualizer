@@ -212,3 +212,33 @@ def quick_sort(nums):  # n^2
             _quick_sort(items, split_index + 1, high)
 
     _quick_sort(nums, 0, nums.get_len() - 1)
+
+
+
+# Python program for implementation of Shell Sort 
+def shell_sort(nums): 
+  
+    # Begin with a big gap, then shrink it 
+    n = len(arr) 
+    g = n//2
+  
+    while g > 0: 
+  
+        for x in range(gap,n): 
+  
+            # add a[x] to the elements that have been gap sorted 
+            # save a[x] in temp and make a hole at position x
+            temp = nums[x] 
+  
+            # shift earlier gap-sorted elements up until the correct 
+            # location for a[x] is found 
+            y = x
+            while  y >= gap and arr[y-g] >temp: 
+                num[y] = nums[y-g] 
+                y -= g 
+  
+            # put temp (the original a[i]) in its correct location 
+            nums[j] = temp 
+        gap //= 2
+
+
